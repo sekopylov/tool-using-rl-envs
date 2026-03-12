@@ -1,0 +1,2 @@
+repo: https://github.com/volcengine/verl.git
+commit: d9d94b4da93fbacc06bb546629171c67c0a674aa

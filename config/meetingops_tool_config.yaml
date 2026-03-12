@@ -1,0 +1,111 @@
+tools:
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_meeting"
+        description: "Get meeting details by meeting_id"
+        parameters:
+          type: object
+          properties:
+            meeting_id: {type: string}
+          required: [meeting_id]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_calendar"
+        description: "Get person calendar by person_id and optional day"
+        parameters:
+          type: object
+          properties:
+            person_id: {type: string}
+            day: {type: integer}
+          required: [person_id]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_room_availability"
+        description: "Get free room slots for a day"
+        parameters:
+          type: object
+          properties:
+            day: {type: integer}
+            duration_min: {type: integer}
+          required: [day]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "find_common_slots"
+        description: "Find common free slots for participants"
+        parameters:
+          type: object
+          properties:
+            participants: {type: array, items: {type: string}}
+            day: {type: integer}
+            duration_min: {type: integer}
+          required: [participants, day]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "move_meeting"
+        description: "Move a meeting to target day/start/room"
+        parameters:
+          type: object
+          properties:
+            meeting_id: {type: string}
+            day: {type: integer}
+            start: {type: string}
+            room_id: {type: string}
+          required: [meeting_id, day, start, room_id]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "cancel_meeting"
+        description: "Cancel meeting by id"
+        parameters:
+          type: object
+          properties:
+            meeting_id: {type: string}
+          required: [meeting_id]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "notify_participants"
+        description: "Notify participants about a meeting change"
+        parameters:
+          type: object
+          properties:
+            meeting_id: {type: string}
+            message: {type: string}
+          required: [meeting_id]
+
+  - class_name: "meetingops_tool.MeetingOpsTool"
+    config: {type: native, max_steps: 6}
+    tool_schema:
+      type: "function"
+      function:
+        name: "finish_task"
+        description: "Finish episode when goal is satisfied"
+        parameters:
+          type: object
+          properties: {}
+          required: []

@@ -1,0 +1,22 @@
+{
+  "train_size": 500,
+  "val_size": 500,
+  "train_difficulties": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "eval_difficulties": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "eval_per_difficulty": 100,
+  "max_steps": 8,
+  "train_parquet": "/home/seankopylov/projects/tool-using-rl-envs/data/meetingops_v1/train.parquet",
+  "val_parquet": "/home/seankopylov/projects/tool-using-rl-envs/data/meetingops_v1/val.parquet"
+}
