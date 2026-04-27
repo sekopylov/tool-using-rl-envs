@@ -1,4 +1,4 @@
-# MeetingOps Tool-Using RL
+# MeetingOps Tool-Using RL (Research in LLMs, HW4)
 
 ## 1) Environment (envs/meeting_ops_env.py)
 
